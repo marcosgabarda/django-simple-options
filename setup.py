@@ -19,7 +19,7 @@ version = __import__('options').__version__
 
 
 setup(
-    name='django-options',
+    name='django-simple-options',
     version=version,
     packages=[
         'options.migrations',
