@@ -1,6 +1,6 @@
-==============
-Django Options
-==============
+=====================
+Django Simple Options
+=====================
 
 Simple app to add configuration options to a Django project.
 
