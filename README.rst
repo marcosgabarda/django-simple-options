@@ -9,7 +9,7 @@ Quick start
 
 **1** Install using pip::
 
-    $ pip install django-options
+    $ pip install django-simple-options
 
 **2** Add "options" to your INSTALLED_APPS settings like this::
 
@@ -28,3 +28,4 @@ Use ``CONFIGURATION_DEFAULT_OPTIONS`` to set the default options::
             "public_name": "Sets tickets as sold out"
         },
     }
+
