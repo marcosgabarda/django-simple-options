@@ -11,3 +11,4 @@ class OptionAdmin(admin.ModelAdmin):
     """Manage configuration options."""
 
     list_display = ['public_name', 'value']
+    search_fields = ['public_name', 'name']
