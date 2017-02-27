@@ -7,6 +7,7 @@ History
 +++++++++++++++++
 
 * Add search options to admin.
+* Export current options command.
 
 1.0a1 (2017-2-20)
 +++++++++++++++++

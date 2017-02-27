@@ -22,6 +22,7 @@ setup(
     name='django-simple-options',
     version=version,
     packages=[
+        'options.management.commands',
         'options.migrations',
         'options',
     ],
