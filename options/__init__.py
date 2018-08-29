@@ -14,6 +14,6 @@ TYPE_CHOICES = (
 
 default_app_config = 'options.apps.ConfigurationsConfig'
 
-VERSION = (1, 0, 0, 'alpha', 2)
+VERSION = (1, 0, 0, 'alpha', 3)
 
 __version__ = get_version(VERSION)
