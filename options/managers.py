@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, division, absolute_import
+
 
 from django.db import models
 from options.settings import DEFAULT_EXCLUDE_USER_OPTIONS
+
 
 class OptionManager(models.Manager):
     """Manager for options."""
