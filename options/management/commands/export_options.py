@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, division, absolute_import
-
 import json
 
 from django.core.management import BaseCommand
@@ -17,6 +15,6 @@ class Command(BaseCommand):
             export[option.name] = {
                 "value": option.value,
                 "type": option.type,
-                "public_name": option.public_name
+                "public_name": option.public_name,
             }
         self.stdout.write(json.dumps(export, indent=4, sort_keys=True))

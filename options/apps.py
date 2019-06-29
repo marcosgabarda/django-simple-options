@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, print_function, division, absolute_import
-
 import logging
 import six
 from django.apps import AppConfig
@@ -15,6 +13,7 @@ logger = logging.getLogger(__name__)
 def create_default_options(sender, **kwargs):
     """Creates the defaults configuration options if they don't exists."""
     from options.models import Option
+
     for key, data in six.iteritems(DEFAULT_OPTIONS):
         if not Option.objects.filter(name=key).exists():
             try:
