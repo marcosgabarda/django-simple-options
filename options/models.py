@@ -1,12 +1,11 @@
-# -*- coding: utf-8 -*-
-
-
 import six
 from django.conf import settings
+from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from options import STRING, TYPE_CHOICES, INT, FLOAT
+from options import STRING, TYPE_CHOICES, CONVERTER
+from options.helpers import convert_value
 from options.managers import OptionManager, UserOptionManager
 
 
@@ -34,32 +33,23 @@ class BaseOption(models.Model):
     def __str__(self):
         return "%s" % self.public_name
 
-    def _convert_value(self, value, type):
-        converter = {INT: int, FLOAT: float, STRING: six.text_type}
-        default_values = {INT: 0, FLOAT: 1.0, STRING: ""}
-        try:
-            option_value = converter.get(self.type, six.text_type)(self.value)
-        except ValueError:
-            option_value = default_values.get(self.type)
-        return option_value
-
     def get_value(self):
         """Gets the value with the proper type. If the type is not
         valid it would return the default value for the field, to avoid
         problems with manual database modifications"""
 
         if not self.is_list:
-            return self._convert_value(self.value, self.type)
+            return convert_value(self.value, self.type)
         else:
             values = self.value.split(",")
-            return [self._convert_value(self.type, item) for item in values]
+            return [convert_value(self.type, value) for value in values]
 
     def clean(self):
-        from django.core.exceptions import ValidationError
-
-        converter = {INT: int, FLOAT: float, STRING: six.text_type}
+        """Calls to the converter to check the type conversion. Added exception
+        for lists, to check all values."""
         try:
-            converter.get(self.type, six.text_type)(self.value)
+            values = [self.value] if not self.is_list else self.value.split(",")
+            [CONVERTER.get(self.type, six.text_type)(value) for value in values]
         except ValueError:
             raise ValidationError(_("Invalid value for this type."))
 

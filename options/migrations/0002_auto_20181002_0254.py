@@ -9,31 +9,63 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('options', '0001_initial'),
+        ("options", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='UserOption',
+            name="UserOption",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('public_name', models.CharField(db_index=True, max_length=255, verbose_name='Public name of the parameter')),
-                ('type', models.PositiveIntegerField(choices=[(0, 'Float'), (1, 'Integer'), (2, 'String')], default=2)),
-                ('value', models.CharField(blank=True, default=None, max_length=256, null=True, verbose_name='Value')),
-                ('is_list', models.BooleanField(default=False)),
-                ('name', models.CharField(max_length=255, verbose_name='Parameter')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='options', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "public_name",
+                    models.CharField(
+                        db_index=True,
+                        max_length=255,
+                        verbose_name="Public name of the parameter",
+                    ),
+                ),
+                (
+                    "type",
+                    models.PositiveIntegerField(
+                        choices=[(0, "Float"), (1, "Integer"), (2, "String")], default=2
+                    ),
+                ),
+                (
+                    "value",
+                    models.CharField(
+                        blank=True,
+                        default=None,
+                        max_length=256,
+                        null=True,
+                        verbose_name="Value",
+                    ),
+                ),
+                ("is_list", models.BooleanField(default=False)),
+                ("name", models.CharField(max_length=255, verbose_name="Parameter")),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="options",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
-            options={
-                'ordering': ['public_name'],
-            },
+            options={"ordering": ["public_name"]},
         ),
         migrations.AlterModelOptions(
-            name='option',
-            options={'ordering': ['public_name']},
+            name="option", options={"ordering": ["public_name"]}
         ),
         migrations.AlterUniqueTogether(
-            name='useroption',
-            unique_together={('user', 'name')},
+            name="useroption", unique_together={("user", "name")}
         ),
     ]
