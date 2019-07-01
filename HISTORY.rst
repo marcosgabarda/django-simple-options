@@ -7,8 +7,6 @@ History
 +++++++++++++++++
 
 * Added validation on types before saving (Thanks to @aaloy!)
-*
-
 
 1.0 (2018-10-2)
 +++++++++++++++++
