@@ -17,3 +17,6 @@ from django.conf import settings
 # }
 #
 DEFAULT_OPTIONS = getattr(settings, "CONFIGURATION_DEFAULT_OPTIONS", {})
+
+# Set the list of options that the user can't customize.
+DEFAULT_EXCLUDE_USER_OPTIONS = getattr(settings, "EXCLUDE_USER_OPTIONS", tuple())

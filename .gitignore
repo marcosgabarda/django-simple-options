@@ -45,8 +45,10 @@ htmlcov
 # Pycharm
 .idea
 
-# Vim
+# Visual Code
+.vscode
 
+# Vim
 *~
 *.swp
 *.swo

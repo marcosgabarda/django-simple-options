@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+setuptools = "*"
+twine = "*"
+wheel = "*"
+
+[packages]
+six = ">=1.0"
+Django = ">=1.9"
+
+[requires]
+python_version = "3.6"
