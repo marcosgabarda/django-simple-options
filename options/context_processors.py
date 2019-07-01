@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from options.models import Option
 
 

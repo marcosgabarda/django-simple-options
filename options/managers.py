@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 from django.db import models
 from options.settings import DEFAULT_EXCLUDE_USER_OPTIONS
 
