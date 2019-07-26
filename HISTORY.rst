@@ -3,10 +3,17 @@
 History
 -------
 
+1.2 (2019-07-26)
++++++++++++++++++
+
+* Added admin to user options.
+* Added integration with Django Rest Framework.
+* Added tests.
+
 1.1 (2019-07-01)
 +++++++++++++++++
 
-* Added validation on types before saving (Thanks to @aaloy!)
+* Added validation on types before saving (Thanks to @aaloy!).
 
 1.0 (2018-10-2)
 +++++++++++++++++

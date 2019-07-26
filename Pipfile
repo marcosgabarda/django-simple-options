@@ -7,6 +7,8 @@ name = "pypi"
 setuptools = "*"
 twine = "*"
 wheel = "*"
+django-rest-framework = "*"
+factory-boy = "*"
 
 [packages]
 six = ">=1.0"
