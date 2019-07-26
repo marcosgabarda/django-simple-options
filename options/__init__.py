@@ -9,6 +9,6 @@ CONVERTER = {INT: int, FLOAT: float, STRING: six.text_type}
 
 default_app_config = "options.apps.ConfigurationsConfig"
 
-VERSION = (1, 1, 0, "final", 0)
+VERSION = (1, 2, 0, "final", 0)
 
 __version__ = get_version(VERSION)

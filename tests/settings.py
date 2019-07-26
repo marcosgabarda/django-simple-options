@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals, absolute_import
-
 import django
 
 DEBUG = True
@@ -8,12 +5,9 @@ USE_TZ = True
 
 SECRET_KEY = "dummy"
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": ":memory:",
-    }
-}
+DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": ":memory:"}}
+
+ROOT_URLCONF = "tests.urls"
 
 INSTALLED_APPS = [
     "django.contrib.auth",
@@ -28,3 +22,22 @@ if django.VERSION >= (1, 10):
     MIDDLEWARE = ()
 else:
     MIDDLEWARE_CLASSES = ()
+
+INSTALLED_APPS += ("rest_framework", "rest_framework.authtoken")
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    )
+}
+
+from options import STRING
+
+CONFIGURATION_DEFAULT_OPTIONS = {
+    "default_option": {
+        "public_name": "Default Option",
+        "type": STRING,
+        "value": "default",
+    }
+}
+EXCLUDE_USER_OPTIONS = ["secret_option"]
