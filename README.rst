@@ -2,6 +2,9 @@
 Django Simple Options
 =====================
 
+.. image:: https://travis-ci.org/marcosgabarda/django-simple-options.svg?branch=master
+    :target: https://travis-ci.org/marcosgabarda/django-simple-options
+
 Simple app to add configuration options to a Django project.
 
 Quick start
