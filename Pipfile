@@ -13,6 +13,8 @@ factory-boy = "*"
 [packages]
 six = ">=1.0"
 Django = ">=1.9"
+pytest-django = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.6"
