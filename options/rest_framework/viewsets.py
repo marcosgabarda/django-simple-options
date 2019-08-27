@@ -1,8 +1,11 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 
-from options.models import Option, UserOption
+from options import get_option_model, get_user_option_model
 from options.rest_framework.serializers import OptionSerializer, UserOptionSerializer
+
+Option = get_option_model()
+UserOption = get_user_option_model()
 
 
 class OptionViewSet(viewsets.ModelViewSet):

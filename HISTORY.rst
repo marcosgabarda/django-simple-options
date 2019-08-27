@@ -3,6 +3,16 @@
 History
 -------
 
+2.0 (2019-08-27)
++++++++++++++++++
+
+* Drop support for Python 2.
+* ``Option`` model and ``UserOption`` model are now swappable.
+* Added option for file options.
+* Changed names of settings variables.
+* Added ``pyptoject.toml`` to distribute.
+* Tests running with pytest.
+
 1.2 (2019-07-26)
 +++++++++++++++++
 

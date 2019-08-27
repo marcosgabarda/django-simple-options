@@ -1,43 +1,41 @@
-from django.test import override_settings, TestCase
-from django.contrib.auth.models import User
-from rest_framework.test import APITestCase
+from django.test import TestCase
 from rest_framework import status
+from rest_framework.test import APITestCase
 
-from tests.test_settings import TEST_SETTINGS
+from options import INT, FLOAT, STRING, get_option_model, get_user_option_model
 from tests.factories import UserFactory, UserOptionFactory, OptionFactory
-from options import INT, FLOAT, STRING
-from options.models import Option, UserOption
+
+Option = get_option_model()
+UserOption = get_user_option_model()
 
 
-@override_settings(**TEST_SETTINGS)
 class OptionTests(TestCase):
     def test_default_options(self):
-        value = Option.objects.get_value("default_option", default="ohter")
+        value = Option.objects.get_value("default_option", default="other")
         self.assertEqual("default", value)
 
     def test_int_conversion_options(self):
         name = "int_option"
-        option = OptionFactory(name=name, value="42", type=INT)
+        OptionFactory(name=name, value="42", type=INT)
         value = Option.objects.get_value(name)
         self.assertIsInstance(value, int)
         self.assertEqual(42, value)
 
     def test_str_conversion_options(self):
         name = "string_option"
-        option = OptionFactory(name=name, value="42")
+        OptionFactory(name=name, value="42")
         value = Option.objects.get_value(name)
         self.assertIsInstance(value, str)
         self.assertEqual("42", value)
 
     def test_float_conversion_options(self):
         name = "string_option"
-        option = OptionFactory(name=name, value="42.5", type=FLOAT)
+        OptionFactory(name=name, value="42.5", type=FLOAT)
         value = Option.objects.get_value(name)
         self.assertIsInstance(value, float)
         self.assertAlmostEqual(42.5, value)
 
 
-@override_settings(**TEST_SETTINGS)
 class UserOptionTests(TestCase):
     def test_custom_user_options(self):
         user = UserFactory()
@@ -50,7 +48,6 @@ class UserOptionTests(TestCase):
         self.assertEqual(expected_value, value)
 
 
-@override_settings(**TEST_SETTINGS)
 class OptionAPITests(APITestCase):
     def test_list_options(self):
         admin = UserFactory(is_staff=True)
