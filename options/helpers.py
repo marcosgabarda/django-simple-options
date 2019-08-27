@@ -9,11 +9,12 @@ from django.utils.deconstruct import deconstructible
 from django.utils.text import slugify
 
 from options.constants import INT, FLOAT, STRING, CONVERTER
-from options.settings import DEFAULT_OPTION_MODEL, DEFAULT_USER_OPTION_MODEL
 
 
 def get_option_model():
     """Return the Notification model that is active in this project."""
+    from options.settings import DEFAULT_OPTION_MODEL
+
     try:
         return django_apps.get_model(DEFAULT_OPTION_MODEL, require_ready=False)
     except ValueError:
@@ -29,6 +30,8 @@ def get_option_model():
 
 def get_user_option_model():
     """Return the Notification model that is active in this project."""
+    from options.settings import DEFAULT_USER_OPTION_MODEL
+
     try:
         return django_apps.get_model(DEFAULT_USER_OPTION_MODEL, require_ready=False)
     except ValueError:
