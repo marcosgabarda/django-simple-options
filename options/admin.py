@@ -1,9 +1,6 @@
 from django.contrib import admin
 
-from options import get_option_model, get_user_option_model
-
-Option = get_option_model()
-UserOption = get_user_option_model()
+from options.models import Option, UserOption
 
 
 @admin.register(Option)
