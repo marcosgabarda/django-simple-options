@@ -1,5 +1,7 @@
 from django.db import models
-from options.settings import DEFAULT_EXCLUDE_USER_OPTIONS
+
+from options import get_option_model
+from options.settings import DEFAULT_EXCLUDE_USER
 
 
 class OptionManager(models.Manager):
@@ -19,11 +21,11 @@ class UserOptionManager(models.Manager):
 
     def filter_user_customizable(self):
         """Returns option that the user can customize himself."""
-        return self.exclude(name__in=DEFAULT_EXCLUDE_USER_OPTIONS)
+        return self.exclude(name__in=DEFAULT_EXCLUDE_USER)
 
     def get_value(self, name, user=None, default=None):
         """Gets the value with the proper type."""
-        from options.models import Option
+        Option = get_option_model()
 
         if user is None:
             return Option.objects.get_value(name=name, default=default)

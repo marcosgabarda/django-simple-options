@@ -26,9 +26,9 @@ Quick start
 Settings options
 ----------------
 
-Use ``CONFIGURATION_DEFAULT_OPTIONS`` to set the default options::
+Use ``SIMPLE_OPTIONS_CONFIGURATION_DEFAULT`` to set the default options::
 
-    CONFIGURATION_DEFAULT_OPTIONS = {
+    SIMPLE_OPTIONS_CONFIGURATION_DEFAULT = {
         "sold_out": {
             "value": 0,
             "type": INT,

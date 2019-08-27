@@ -4,12 +4,10 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-six = ">=1.0"
 Django = ">=1.9"
 pytest-django = "*"
 pytest-cov = "*"
 django-rest-framework = "*"
-setuptools = "*"
-twine = "*"
-wheel = "*"
 factory-boy = "*"
+flit = "*"
+pytest = "*"

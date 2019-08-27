@@ -31,13 +31,7 @@ REST_FRAMEWORK = {
     )
 }
 
-from options import STRING
-
-CONFIGURATION_DEFAULT_OPTIONS = {
-    "default_option": {
-        "public_name": "Default Option",
-        "type": STRING,
-        "value": "default",
-    }
+SIMPLE_OPTIONS_CONFIGURATION = {
+    "default_option": {"public_name": "Default Option", "type": 2, "value": "default"}
 }
-EXCLUDE_USER_OPTIONS = ["secret_option"]
+SIMPLE_OPTIONS_EXCLUDE_USER = ["secret_option"]
