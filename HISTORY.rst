@@ -3,8 +3,13 @@
 History
 -------
 
+2.0.1 (2019-08-27)
+++++++++++++++++++
+
+* Fixed bug with import settings.
+
 2.0 (2019-08-27)
-+++++++++++++++++
+++++++++++++++++
 
 * Drop support for Python 2.
 * ``Option`` model and ``UserOption`` model are now swappable.

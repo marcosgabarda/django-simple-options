@@ -14,4 +14,4 @@ __all__ = [
     "TYPE_CHOICES",
     "CONVERTER",
 ]
-__version__ = "2.0.0"
+__version__ = "2.0.1"

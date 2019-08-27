@@ -30,8 +30,13 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
     )
 }
+from options.constants import STRING
 
 SIMPLE_OPTIONS_CONFIGURATION = {
-    "default_option": {"public_name": "Default Option", "type": 2, "value": "default"}
+    "default_option": {
+        "public_name": "Default Option",
+        "type": STRING,
+        "value": "default",
+    }
 }
 SIMPLE_OPTIONS_EXCLUDE_USER = ["secret_option"]
