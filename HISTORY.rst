@@ -3,6 +3,13 @@
 History
 -------
 
+2.1.0 (2019-08-29)
+++++++++++++++++++
+
+* Added public option to Option.
+* Changed permissions classes to OptionViewSet.
+
+
 2.0.2 (2019-08-27)
 ++++++++++++++++++
 

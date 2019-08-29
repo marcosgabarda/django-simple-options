@@ -11,10 +11,22 @@ UserOption = get_user_option_model()
 class OptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Option
-        fields = ["id", "name", "public_name", "type", "value", "file", "is_list"]
+        fields = [
+            "id",
+            "name",
+            "public_name",
+            "type",
+            "value",
+            "file",
+            "is_list",
+            "is_public",
+        ]
 
 
 class UserOptionSerializer(OptionSerializer):
+
+    is_public = serializers.BooleanField(default=True, write_only=True)
+
     class Meta(OptionSerializer.Meta):
         model = UserOption
 
@@ -24,3 +36,4 @@ class UserOptionSerializer(OptionSerializer):
             raise serializers.ValidationError(
                 _("The name in the option can't be handle by the user.")
             )
+        return value

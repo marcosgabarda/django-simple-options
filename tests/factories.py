@@ -28,6 +28,7 @@ class UserFactory(DjangoModelFactory):
 
 
 class OptionFactory(DjangoModelFactory):
+    name = FuzzyText()
     public_name = FuzzyText()
     type = STRING
 
@@ -36,6 +37,7 @@ class OptionFactory(DjangoModelFactory):
 
 
 class UserOptionFactory(DjangoModelFactory):
+    name = FuzzyText()
     public_name = FuzzyText()
     type = STRING
 
