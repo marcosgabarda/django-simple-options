@@ -18,6 +18,7 @@ class BaseOption(models.Model):
         verbose_name=_("public name of the parameter"),
         max_length=255,
         unique=False,
+        blank=True,
         db_index=True,
     )
     type = models.PositiveIntegerField(choices=TYPE_CHOICES, default=STRING)
@@ -28,6 +29,7 @@ class BaseOption(models.Model):
         upload_to=UploadToDir("options", random_name=True), null=True, blank=True
     )
     is_list = models.BooleanField(default=False)
+    is_public = models.BooleanField(default=False)
 
     class Meta:
         abstract = True
@@ -58,6 +60,9 @@ class BaseOption(models.Model):
             [CONVERTER.get(self.type, str)(value) for value in values]
         except ValueError:
             raise ValidationError(_("Invalid value for this type."))
+        # Default public name
+        if not self.public_name:
+            self.public_name = self.name
 
     def save(self, *args, **kwargs):
         self.clean()
@@ -80,7 +85,7 @@ class UserOption(BaseOption):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, related_name="options", on_delete=models.CASCADE
     )
-    name = models.CharField(verbose_name=_("Parameter"), max_length=255)
+    name = models.CharField(_("parameter name"), max_length=255)
 
     objects = UserOptionManager()
 

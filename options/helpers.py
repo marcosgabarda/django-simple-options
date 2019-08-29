@@ -42,7 +42,7 @@ def get_user_option_model():
     except LookupError:
         raise ImproperlyConfigured(
             "SIMPLE_OPTIONS_USER_OPTION_MODEL refers to model '%s' that has not "
-            "been installed" % DEFAULT_OPTION_MODEL
+            "been installed" % DEFAULT_USER_OPTION_MODEL
         )
 
 
