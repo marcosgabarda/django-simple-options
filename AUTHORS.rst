@@ -10,4 +10,5 @@ Development Lead
 Contributors
 ------------
 
-* Antoni Aloy
+* Antoni Aloy (@aaloy)
+* Iván Martín (@seik)
