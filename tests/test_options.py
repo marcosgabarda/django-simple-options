@@ -2,7 +2,7 @@ from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from options import INT, FLOAT, STRING
+from options import INT, FLOAT, STR
 from options.models import Option, UserOption
 from tests.factories import UserFactory, UserOptionFactory, OptionFactory
 
@@ -45,7 +45,7 @@ class UserOptionTests(TestCase):
         name = "default_option"
         expected_value = "user default"
         UserOption.objects.create(
-            name=name, public_name=name, value=expected_value, type=STRING, user=user
+            name=name, public_name=name, value=expected_value, type=STR, user=user
         )
         value = UserOption.objects.get_value(name, user=user, default="other")
         self.assertEqual(expected_value, value)

@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from options.constants import STRING, TYPE_CHOICES, CONVERTER, FILE
+from options.constants import STR, TYPE_CHOICES, CONVERTER, FILE
 from options.helpers import convert_value, UploadToDir
 from options.managers import OptionManager, UserOptionManager
 
@@ -21,7 +21,7 @@ class BaseOption(models.Model):
         blank=True,
         db_index=True,
     )
-    type = models.PositiveIntegerField(choices=TYPE_CHOICES, default=STRING)
+    type = models.PositiveIntegerField(choices=TYPE_CHOICES, default=STR)
     value = models.CharField(
         null=True, blank=True, default=None, max_length=256, verbose_name=_("value")
     )
