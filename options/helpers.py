@@ -8,7 +8,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.utils.deconstruct import deconstructible
 from django.utils.text import slugify
 
-from options.constants import INT, FLOAT, STRING, CONVERTER
+from options.constants import INT, FLOAT, STR, CONVERTER
 
 
 def get_option_model():
@@ -48,7 +48,7 @@ def get_user_option_model():
 
 def convert_value(value, value_type):
     """Converts the given value to the given type."""
-    default_values = {INT: 0, FLOAT: 1.0, STRING: ""}
+    default_values = {INT: 0, FLOAT: 1.0, STR: ""}
     try:
         option_value = CONVERTER.get(value_type, str)(value)
     except ValueError:

@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from factory import DjangoModelFactory, Faker, post_generation
 from factory.fuzzy import FuzzyText
 
-from options import STRING
+from options import STR
 from options.models import Option, UserOption
 
 
@@ -30,7 +30,7 @@ class UserFactory(DjangoModelFactory):
 class OptionFactory(DjangoModelFactory):
     name = FuzzyText()
     public_name = FuzzyText()
-    type = STRING
+    type = STR
 
     class Meta:
         model = Option
@@ -39,7 +39,7 @@ class OptionFactory(DjangoModelFactory):
 class UserOptionFactory(DjangoModelFactory):
     name = FuzzyText()
     public_name = FuzzyText()
-    type = STRING
+    type = STR
 
     class Meta:
         model = UserOption

@@ -1,10 +1,10 @@
 from django.utils.translation import ugettext_lazy as _
 
-FLOAT, INT, STRING, FILE = (0, 1, 2, 3)
+FLOAT, INT, STR, FILE = (0, 1, 2, 3)
 TYPE_CHOICES = (
     (FLOAT, _("Float")),
     (INT, _("Integer")),
-    (STRING, _("String")),
+    (STR, _("String")),
     (FILE, _("File")),
 )
-CONVERTER = {INT: int, FLOAT: float, STRING: str, FILE: str}
+CONVERTER = {INT: int, FLOAT: float, STR: str, FILE: str}

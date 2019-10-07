@@ -30,12 +30,12 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
     )
 }
-from options.constants import STRING
+from options.constants import STR
 
 SIMPLE_OPTIONS_CONFIGURATION = {
     "default_option": {
         "public_name": "Default Option",
-        "type": STRING,
+        "type": STR,
         "value": "default",
     }
 }
