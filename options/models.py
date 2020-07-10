@@ -49,7 +49,7 @@ class BaseOption(models.Model):
             return convert_value(self.value, self.type)
         else:
             values = self.value.split(",")
-            return [convert_value(type, value) for value in values]
+            return [convert_value(value, self.type) for value in values]
 
     def clean(self):
         """Calls to the converter to check the type conversion. Added exception
