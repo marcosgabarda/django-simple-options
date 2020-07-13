@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "django-websocket-notification"
+name = "django-simple-options"
 version = "2.1.2"
-description = "A Django package to handle notifications using Django Channels and WebSockets."
+description = "Simple app to add configuration options to a Django project."
 readme = "README.rst"
 authors = ["Marcos Gabarda <hey@marcosgabarda.com>"]
 license = "MIT"
-homepage = "https://github.com/marcosgabarda/django-websocket-notifications"
+homepage = "https://github.com/marcosgabarda/django-simple-options"
 packages = [
     { include = "options" },
 ]
