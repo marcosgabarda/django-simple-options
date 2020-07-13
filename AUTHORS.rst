@@ -12,3 +12,4 @@ Contributors
 
 * Antoni Aloy (@aaloy)
 * Iván Martín (@seik)
+* Salvador Marí (@saruba)

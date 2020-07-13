@@ -56,6 +56,7 @@ htmlcov
 
 # virtual environments
 .env
+.venv
 
 # Others
 docs/_build

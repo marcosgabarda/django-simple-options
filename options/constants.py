@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 FLOAT, INT, STR, FILE = (0, 1, 2, 3)
 TYPE_CHOICES = (

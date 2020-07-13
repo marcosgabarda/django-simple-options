@@ -3,7 +3,7 @@ import logging
 from django.apps import AppConfig
 from django.db.models.signals import post_migrate
 from django.db.utils import IntegrityError
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from options import get_option_model
 from options.settings import DEFAULT_CONFIGURATION
