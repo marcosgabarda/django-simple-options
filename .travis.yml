@@ -2,12 +2,19 @@ language: python
 python:
   - "3.7"
   - "3.8"
+cache:
+  directories:
+    - $PIP_CACHE_DIR
+env:
+  global:
+    - PIP_CACHE_DIR=$HOME/.cache/pip
 install:
   - pip install coveralls
-  - pip install pipenv
-  - pipenv install
+  - pip install poetry
+  - poetry config virtualenvs.create false && poetry install -n --no-ansi
 script:
-  - pytest --cov options 
+  - black --check .
+  - pytest --cov options
 after_success:
   - coveralls
 
