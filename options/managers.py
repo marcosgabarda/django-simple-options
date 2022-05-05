@@ -24,10 +24,10 @@ class OptionManager(models.Manager):
         """Gets the value with the proper type."""
         try:
             option = self.model.objects.get(name=name)
-            return option.get_value()
         except self.model.DoesNotExist:
             return default
-
+        else:
+            return option.get_value()
 
 class UserOptionQuerySet(models.QuerySet):
     def public(self):
@@ -57,6 +57,7 @@ class UserOptionManager(models.Manager):
             return Option.objects.get_value(name=name, default=default)
         try:
             option = self.model.objects.get(user=user, name=name)
-            return option.get_value()
         except self.model.DoesNotExist:
             return Option.objects.get_value(name=name, default=default)
+        else:
+            return option.get_value()
