@@ -2,9 +2,9 @@ from django.test import TestCase
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from options import INT, FLOAT, STR
+from options import FLOAT, INT, STR
 from options.models import Option, UserOption
-from tests.factories import UserFactory, UserOptionFactory, OptionFactory
+from tests.factories import OptionFactory, UserFactory, UserOptionFactory
 
 
 class OptionTests(TestCase):

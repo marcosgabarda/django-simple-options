@@ -3,7 +3,6 @@ from rest_framework import routers
 
 from options.rest_framework.viewsets import OptionViewSet, UserOptionViewSet
 
-
 app_name = "api"
 
 router = routers.DefaultRouter()

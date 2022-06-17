@@ -3,6 +3,12 @@
 History
 -------
 
+2.2.0 (2022-06-17)
+++++++++++++++++++
+
+* Feat: Support for Django 4.0.
+* Fix: Better format in code.
+
 2.1.2 (2020-07-13)
 ++++++++++++++++++
 

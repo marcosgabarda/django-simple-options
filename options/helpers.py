@@ -8,7 +8,7 @@ from django.core.exceptions import ImproperlyConfigured
 from django.utils.deconstruct import deconstructible
 from django.utils.text import slugify
 
-from options.constants import INT, FLOAT, STR, CONVERTER
+from options.constants import CONVERTER, FLOAT, INT, STR
 
 
 def get_option_model():

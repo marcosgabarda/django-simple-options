@@ -1,3 +1,5 @@
+from typing import Tuple
+
 from django.conf import settings
 
 # Needed to build and publish with Flit
@@ -21,7 +23,7 @@ SECRET_KEY = "snitch"
 DEFAULT_CONFIGURATION = getattr(settings, "SIMPLE_OPTIONS_CONFIGURATION", {})
 
 # Set the list of options that the user can't customize.
-DEFAULT_EXCLUDE_USER = getattr(settings, "SIMPLE_OPTIONS_EXCLUDE_USER", tuple())
+DEFAULT_EXCLUDE_USER: Tuple = getattr(settings, "SIMPLE_OPTIONS_EXCLUDE_USER", tuple())
 
 # Swappable Option model
 DEFAULT_OPTION_MODEL = getattr(
