@@ -27,7 +27,7 @@ class OptionTests(TestCase):
         self.assertEqual("42", value)
 
     def test_float_conversion_options(self):
-        name = "string_option"
+        name = "float_option"
         OptionFactory(name=name, value="42.5", type=FLOAT)
         value = Option.objects.get_value(name)
         self.assertIsInstance(value, float)

@@ -2,6 +2,7 @@ import hashlib
 import os
 import random
 import time
+from typing import Type, Union
 
 from django.apps import apps as django_apps
 from django.core.exceptions import ImproperlyConfigured
@@ -11,7 +12,7 @@ from django.utils.text import slugify
 from options.constants import CONVERTER, FLOAT, INT, STR
 
 
-def get_option_model():
+def get_option_model() -> Type:
     """Return the Notification model that is active in this project."""
     from options.settings import DEFAULT_OPTION_MODEL
 
@@ -28,7 +29,7 @@ def get_option_model():
         )
 
 
-def get_user_option_model():
+def get_user_option_model() -> Type:
     """Return the Notification model that is active in this project."""
     from options.settings import DEFAULT_USER_OPTION_MODEL
 
@@ -46,7 +47,7 @@ def get_user_option_model():
         )
 
 
-def convert_value(value, value_type):
+def convert_value(value: str, value_type: int) -> Union[str, int, float]:
     """Converts the given value to the given type."""
     default_values = {INT: 0, FLOAT: 1.0, STR: ""}
     try:

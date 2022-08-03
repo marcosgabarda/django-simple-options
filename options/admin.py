@@ -7,7 +7,7 @@ from options.models import Option, UserOption
 class OptionAdmin(admin.ModelAdmin):
     """Manage configuration options."""
 
-    list_display = ["public_name", "value", "is_public"]
+    list_display = ["public_name", "value", "is_public", "help_text"]
     list_filter = ["is_public"]
     search_fields = ["public_name", "name"]
 
@@ -16,6 +16,6 @@ class OptionAdmin(admin.ModelAdmin):
 class UserOptionAdmin(admin.ModelAdmin):
     """Manage configuration user options."""
 
-    list_display = ["user", "public_name", "value", "is_public"]
+    list_display = ["user", "public_name", "value", "is_public", "help_text"]
     list_filter = ["is_public"]
     search_fields = ["public_name", "name"]

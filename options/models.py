@@ -1,3 +1,5 @@
+from typing import Sequence, Union
+
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import models
@@ -21,6 +23,7 @@ class BaseOption(models.Model):
         blank=True,
         db_index=True,
     )
+    help_text = models.TextField(verbose_name=_("help text"), blank=True, null=True)
     type = models.PositiveIntegerField(choices=TYPE_CHOICES, default=STR)
     value = models.CharField(
         null=True, blank=True, default=None, max_length=256, verbose_name=_("value")
@@ -34,10 +37,10 @@ class BaseOption(models.Model):
     class Meta:
         abstract = True
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.public_name}"
 
-    def get_value(self):
+    def get_value(self) -> Union[int, str, float, Sequence]:
         """Gets the value with the proper type. If the type is not
         valid it would return the default value for the field, to avoid
         problems with manual database modifications.
@@ -51,7 +54,7 @@ class BaseOption(models.Model):
             values = self.value.split(",")
             return [convert_value(value, self.type) for value in values]
 
-    def clean(self):
+    def clean(self) -> None:
         """Calls to the converter to check the type conversion. Added exception
         for lists, to check all values.
         """

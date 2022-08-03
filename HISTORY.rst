@@ -3,6 +3,18 @@
 History
 -------
 
+2.3.0 (2022-08-03)
+++++++++++++++++++
+
+* Feat: Added thread cache
+* Feat: Added help text for option
+* Feat: Added typing
+
+2.2.1 (2022-06-17)
+++++++++++++++++++
+
+* Fix: Optional default_app_config
+
 2.2.0 (2022-06-17)
 ++++++++++++++++++
 
