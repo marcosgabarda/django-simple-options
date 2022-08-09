@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-simple-options"
-version = "2.3.0"
+version = "2.3.1"
 description = "Simple app to add configuration options to a Django project."
 readme = "README.rst"
 authors = ["Marcos Gabarda <hey@marcosgabarda.com>"]

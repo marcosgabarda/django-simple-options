@@ -1,15 +1,17 @@
-from threading import local
 from typing import TYPE_CHECKING, Optional, Sequence, Union
 
+from django.core.cache import caches
 from django.db import models
 
 from options import get_option_model
-from options.settings import DEFAULT_EXCLUDE_USER
+from options.settings import (
+    DEFAULT_EXCLUDE_USER,
+    DEFAULT_OPTION_CACHE_ALIAS,
+    DEFAULT_OPTION_CACHE_TIMEOUT,
+)
 
 if TYPE_CHECKING:
     from django.contrib.auth.models import User
-
-_active = local()  # Active thread
 
 
 class OptionQuerySet(models.QuerySet):
@@ -26,12 +28,14 @@ class OptionManager(models.Manager):
     def __get_cached_value(
         self, name: str
     ) -> Optional[Union[int, float, str, Sequence]]:
-        return getattr(_active, f"{self.cache_prefix}{name}", None)
+        return caches[DEFAULT_OPTION_CACHE_ALIAS].get(f"{self.cache_prefix}{name}")
 
     def __set_cached_value(
         self, name: str, value: Union[int, float, str, Sequence]
     ) -> None:
-        return setattr(_active, f"{self.cache_prefix}{name}", value)
+        caches[DEFAULT_OPTION_CACHE_ALIAS].set(
+            f"{self.cache_prefix}{name}", value, DEFAULT_OPTION_CACHE_TIMEOUT
+        )
 
     def get_queryset(self) -> "OptionQuerySet":
         return OptionQuerySet(self.model, using=self._db)
@@ -75,7 +79,7 @@ class UserOptionManager(models.Manager):
             if user is None
             else f"{self.cache_prefix}{name}_{user.pk}"
         )
-        return getattr(_active, key, None)
+        return caches[DEFAULT_OPTION_CACHE_ALIAS].get(key)
 
     def __set_cached_value(
         self,
@@ -88,7 +92,7 @@ class UserOptionManager(models.Manager):
             if user is None
             else f"{self.cache_prefix}{name}_{user.pk}"
         )
-        return setattr(_active, key, value)
+        caches[DEFAULT_OPTION_CACHE_ALIAS].set(key, value, DEFAULT_OPTION_CACHE_TIMEOUT)
 
     def get_queryset(self) -> "UserOptionQuerySet":
         return OptionQuerySet(self.model, using=self._db)

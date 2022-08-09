@@ -30,6 +30,12 @@ DEFAULT_OPTION_MODEL = getattr(
     settings, "SIMPLE_OPTIONS_OPTION_MODEL", "options.Option"
 )
 
+# Cache options
+DEFAULT_OPTION_CACHE_ALIAS: str = getattr(
+    settings, "SIMPLE_OPTION_CACHE_ALIAS", "default"
+)
+DEFAULT_OPTION_CACHE_TIMEOUT: int = getattr(settings, "SIMPLE_OPTION_CACHE_TIMEOUT", 60)
+
 # Swappable UserOption model
 DEFAULT_USER_OPTION_MODEL = getattr(
     settings, "SIMPLE_OPTIONS_USER_OPTION_MODEL", "options.UserOption"

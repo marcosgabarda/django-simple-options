@@ -3,6 +3,11 @@
 History
 -------
 
+2.3.1 (2022-08-09)
+++++++++++++++++++
+
+* Feat: Changed thread cache with Django cache
+
 2.3.0 (2022-08-03)
 ++++++++++++++++++
 

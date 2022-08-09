@@ -14,7 +14,7 @@ __all__ = [
     "TYPE_CHOICES",
     "CONVERTER",
 ]
-__version__ = "2.3.0"
+__version__ = "2.3.1"
 
 if django.VERSION < (3, 2):
     default_app_config = "options.apps.ConfigurationsConfig"
