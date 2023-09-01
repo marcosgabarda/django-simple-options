@@ -1,14 +1,12 @@
 [tool.poetry]
 name = "django-simple-options"
-version = "2.3.1"
+version = "2.4.0"
 description = "Simple app to add configuration options to a Django project."
 readme = "README.rst"
 authors = ["Marcos Gabarda <hey@marcosgabarda.com>"]
 license = "MIT"
 homepage = "https://github.com/marcosgabarda/django-simple-options"
-packages = [
-    { include = "options" },
-]
+packages = [{ include = "options" }]
 
 classifiers = [
     "Environment :: Web Environment",
@@ -16,20 +14,20 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 django = ">=3.0.0"
 djangorestframework = ">=3.11.0"
 
-[tool.poetry.dev-dependencies]
-pylint = "^2.5.3"
-pytest = "^5.4.3"
-black = "^22.3.0"
-factory_boy = "^2.12.0"
-django-test-plus = "^1.4.0"
-pytest-django = "^3.9.0"
-pytest-cov = "^2.10.0"
-isort = "^5.10.1"
-mypy = "^0.961"
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.17.5"
+pytest = "^7.4.0"
+black = "^23.7.0"
+factory_boy = "^3.2.1"
+django-test-plus = "=2.2.1"
+pytest-django = "^4.5.2"
+pytest-cov = "^4.1.0"
+mypy = "^1.5.1"
+isort = "^5.12.0"
 
 [tool.isort]
 multi_line_output = 3

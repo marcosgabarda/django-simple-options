@@ -2,12 +2,19 @@
 Django Simple Options
 =====================
 
-.. image:: https://travis-ci.org/marcosgabarda/django-simple-options.svg?branch=master
-    :target: https://travis-ci.org/marcosgabarda/django-simple-options
+.. image:: https://img.shields.io/pypi/v/django-simple-options
+    :target: https://pypi.org/project/django-simple-options/
+    :alt: PyPI
 
 .. image:: https://coveralls.io/repos/github/marcosgabarda/django-simple-options/badge.svg?branch=master
     :target: https://coveralls.io/github/marcosgabarda/django-simple-options?branch=master
 
+.. image:: https://img.shields.io/badge/code_style-black-000000.svg
+    :target: https://github.com/ambv/black
+
+.. image:: https://readthedocs.org/projects/django-simple-options/badge/?version=latest
+    :target: https://django-simple-options.readthedocs.io/en/latest/?badge=latest
+    :alt: Documentation Status
 
 Simple app to add configuration options to a Django project.
 

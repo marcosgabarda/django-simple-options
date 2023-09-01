@@ -6,7 +6,6 @@ import options.helpers
 
 
 class Migration(migrations.Migration):
-
     dependencies = [("options", "0002_auto_20181002_0254")]
 
     operations = [

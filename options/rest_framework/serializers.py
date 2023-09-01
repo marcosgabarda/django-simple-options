@@ -24,7 +24,6 @@ class OptionSerializer(serializers.ModelSerializer):
 
 
 class UserOptionSerializer(OptionSerializer):
-
     is_public = serializers.BooleanField(default=True, write_only=True)
 
     class Meta(OptionSerializer.Meta):

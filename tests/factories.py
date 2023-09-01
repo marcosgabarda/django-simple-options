@@ -7,7 +7,6 @@ from options.models import Option, UserOption
 
 
 class UserFactory(DjangoModelFactory):
-
     username = Faker("email")
 
     @post_generation
