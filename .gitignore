@@ -63,3 +63,4 @@ docs/_build
 build/
 dist/
 .coverage
+cov.xml
