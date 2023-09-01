@@ -6,8 +6,8 @@ Django Simple Options
     :target: https://pypi.org/project/django-simple-options/
     :alt: PyPI
 
-.. image:: https://coveralls.io/repos/github/marcosgabarda/django-simple-options/badge.svg?branch=main
-    :target: https://coveralls.io/github/marcosgabarda/django-simple-options?branch=main
+.. image:: https://codecov.io/gh/marcosgabarda/django-simple-options/branch/main/graph/badge.svg?token=P0XWIJGYZD 
+    :target: https://codecov.io/gh/marcosgabarda/django-simple-options
 
 .. image:: https://img.shields.io/badge/code_style-black-000000.svg
     :target: https://github.com/ambv/black
