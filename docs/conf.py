@@ -24,7 +24,7 @@ from single_source import get_version
 # -- Project information -----------------------------------------------------
 
 project = "Django Simple Options"
-copyright = "2020, Marcos Gabarda"
+copyright = "2017, Marcos Gabarda"
 author = "Marcos Gabarda"
 
 # The version info for the project you're documenting, acts as replacement for
